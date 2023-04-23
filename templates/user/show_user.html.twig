@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User{% endblock %}
+
+{% block body %}
+    <h1>User</h1>
+<div style="margin-left:670px ;width:30% ; margin-top:120px">
+    <table class="table">
+        <tbody>
+           
+            <tr>
+                <th>Nom</th>
+                <td>{{ user.nom }}</td>
+            </tr>
+            <tr>
+                <th>prenom</th>
+                <td>{{ user.prenom }}</td>
+            </tr>
+            
+            <tr>
+                <th>username</th>
+                <td>{{ user.Nomd }}</td>
+            </tr>
+            <tr>
+                <th>Numero_tele</th>
+                <td>{{ user.num }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ user.email }}</td>
+            </tr>
+           
+            {# <tr>
+                <th>image</th>
+                <td>{{ user.image }}</td>
+            </tr> #}
+           
+        
+            <tr>
+                <th>statut</th>
+                <td>{{ user.statuts }}</td>
+            </tr>
+         
+        </tbody>
+    </table>
+    </div>
+    <center>
+                <a class="btn btn-success" href="{{ path('app_home') }}">back</a>
+    </center>
+
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'base1.html.twig' %}
+
+{% block title %}User{% endblock %}
+
+
+{% block body %}
+
+
+<div class="row" style="display: flex;align-items: center;margin-top: 150px;">
+
+    <div class="col-lg-6">
+
+        <div class="card2">
+            <div class="card-body">
+                <h5 class="card-title">Users List </h5>
+
+                <!-- Table with stripped rows -->
+                <table class="table table-striped">
+                    <thead>
+                    <tr>     
+                        <th>email</th>
+                        <th>nom</th>
+                         <th>prenom</th>
+                        <th>username</th>
+                      
+                        <th>Télephone</th>
+                        <th>Statuts</th>
+                        
+                         <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+        {% for user in users %}
+                        <tr>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.nom }}</td>
+                            <td>{{ user.prenom }}</td>
+                            <td>{{ user.Nomd }}</td>
+                          
+                            <td>{{ user.num }}</td>
+                            <td>{{ user.statuts }}</td>
+                           
+                            {# <td>
+                                <a class="btn btn-success" href="{{ path('app_user_edit',{'id':user.id}) }}">Modifier</a>
+                            </td> #}
+                            <td>
+                                <a class="btn btn-success" href="{{ path('user_show',{'id':user.id}) }}">show</a>
+                            </td>
+                        </tr>
+
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+                <!-- End small tables -->
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>
+{% endblock %}

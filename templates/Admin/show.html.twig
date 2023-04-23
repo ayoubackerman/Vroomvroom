@@ -1,0 +1,50 @@
+{% extends 'base1.html.twig' %}
+
+{% block title %}User{% endblock %}
+
+{% block body %}
+    <h1>User</h1>
+
+    <table class="table">
+        <tbody>
+           
+             <tr>
+                <th>Nom</th>
+                <td>{{ user.nom }}</td>
+            </tr>
+            <tr>
+                <th>prenom</th>
+                <td>{{ user.prenom }}</td>
+            </tr>
+            
+            <tr>
+                <th>username</th>
+                <td>{{ user.Nomd }}</td>
+            </tr>
+            <tr>
+                <th>Numero_tele</th>
+                <td>{{ user.num }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ user.email }}</td>
+            </tr>
+           
+            {# <tr>
+                <th>image</th>
+                <td>{{ user.image }}</td>
+            </tr> #}
+           
+        
+            <tr>
+                <th>statut</th>
+                <td>{{ user.statuts }}</td>
+            </tr>
+         
+        </tbody>
+    </table>
+    <center>
+                <a class="btn btn-success" href="{{ path('user_status_edit', {'id': user.id}) }}">edit statuts</a>
+    </center>
+
+{% endblock %}

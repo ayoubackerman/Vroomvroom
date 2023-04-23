@@ -1,0 +1,148 @@
+ {% extends 'base.html.twig' %}
+
+
+{% block header %}
+
+{% endblock %}
+
+{% block sidebar %}
+
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+
+        <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+                        <div class="d-flex justify-content-center py-4">
+                            <a href="index.html" class="logo d-flex align-items-center w-auto">
+                                <img  alt="">
+                                <span class="d-none d-lg-block">VROOM VROOM</span>
+                            </a>
+                        </div><!-- End Logo -->
+
+                        <div class="card mb-3">
+
+                            <div class="card-body">
+
+                                <div class="pt-4 pb-2">
+                                    <h5 class="card-title text-center pb-0 fs-4">Create an Account</h5>
+                                    <p class="text-center small">Enter your personal details to create account</p>
+                                    
+                                </div>
+
+
+                                {{ form_start(registrationForm,{attr:{novalidate:'novalidate'}}) }}
+                                <div class="col-12">
+                                        <label for="nom" class="form-label">Your Name</label>
+
+                                        <div class="invalid-feedback">Please, enter your name!</div>
+                                    {{ form_widget(registrationForm.nom,{'attr':{'class':'form-control'}}) }}
+                                    {{ form_errors(registrationForm.nom,{'attr':{'class':'text-danger'}}) }}
+
+                                </div>
+
+                                 <div class="col-12">
+                                    <label for="yourdomaine" class="form-label">entrer votre prenom</label>
+                                    {{ form_widget(registrationForm.prenom,{'attr':{'class':'form-control'}}) }}
+                                    <div class="invalid-feedback">entrer votre prenom</div>
+             {{ form_errors(registrationForm.prenom,{'attr':{'class':'text-danger'}}) }}
+
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="yourdomaine" class="form-label">entrer votre nom d'utilisateur </label>
+                                    {{ form_widget(registrationForm.Nomd,{'attr':{'class':'form-control'}}) }}
+                                    <div class="invalid-feedback">entrer votre nom d'utilisateur </div>
+             {{ form_errors(registrationForm.Nomd,{'attr':{'class':'text-danger'}}) }}
+
+                                </div>
+
+                                    <div class="col-12">
+                                        <label for="yourEmail" class="form-label">Your Email</label>
+                                        {{ form_widget(registrationForm.email,{'attr':{'class':'form-control'}}) }}
+                                        <div class="invalid-feedback">Please enter a valid Email adddress!</div>
+                                                            {{ form_errors(registrationForm.email,{'attr':{'class':'text-danger'}}) }}
+
+                                    </div>
+                                    
+
+                                    <div class="col-12">
+                                        <label for="yourPassword" class="form-label">Password</label>
+                                        {{ form_widget(registrationForm.plainPassword,{'attr':{'class':'form-control'}}) }}
+                                        <div class="invalid-feedback">Please enter your password!</div>
+                                                            {{ form_errors(registrationForm.plainPassword,{'attr':{'class':'text-danger'}}) }}
+
+                                    </div>
+
+                               
+ <div class="col-12">
+                                        <label for="yourtel" class="form-label">votre téléphone</label>
+                                        {{ form_widget(registrationForm.num,{'attr':{'class':'form-control'}}) }}
+                                        <div class="invalid-feedback">svp entrez votre num de tel</div>
+                                        {{ form_errors(registrationForm.num,{'attr':{'class':'text-danger'}}) }}
+
+                                    </div>
+                                     <div class="col-12">
+                                        <label for="yourmat" class="form-label">votre image</label>
+                                        {{ form_widget(registrationForm.image,{'attr':{'class':'form-control'}}) }}
+                                        <div class="invalid-feedback">svp entrez votre image</div>
+                                        {{ form_errors(registrationForm.image,{'attr':{'class':'text-danger'}}) }}
+
+                                    </div>
+                                     
+                                    
+                                    <div style="display:none">
+                                    <div class="col-12">
+                                        <label for="youraddr" class="form-label">votre statut</label>
+                                        {{ form_widget(registrationForm.statuts,{'attr':{'class':'form-control'}}) }}
+                                        <div class="invalid-feedback">statuts</div>
+                                            {{ form_errors(registrationForm.statuts,{'attr':{'class':'text-danger'}}) }}
+
+                                    </div>
+                                    </div>
+                                <div class="col-12">
+                                        <label for="youraddr" class="form-label">choisir votre role</label>
+                                        {{ form_widget(registrationForm.roles,{'attr':{'class':'form-control'}}) }}
+                                        <div class="invalid-feedback">svp choisir votre role !</div>
+                                            {{ form_errors(registrationForm.roles,{'attr':{'class':'text-danger'}}) }}
+
+                                    </div> 
+                                     
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required="">
+                                            <label class="form-check-label" for="acceptTerms">I agree and accept the <a href="#">terms and conditions</a></label>
+                                            <div class="invalid-feedback">You must agree before submitting.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100" type="submit">Create Account</button>
+                                    </div>
+                                    <div class="col-12">
+                                        <p class="small mb-0">Already have an account? <a href="{{ path('app_login') }}">Log in</a></p>
+                                    </div>
+                                {{ form_end(registrationForm) }}
+
+                            </div>
+                        </div>
+
+                        
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+{% endblock %}

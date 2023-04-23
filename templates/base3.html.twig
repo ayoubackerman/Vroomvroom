@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {# Run `composer require symfony/webpack-encore-bundle`
+    and uncomment the following Encore helpers to start using Symfony UX #}
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free Website Template" name="keywords">
+    <meta content="Free Website Template" name="description">
+    <!-- Favicon -->
+    <link href="{{ asset('Front/img/favicon.ico') }}" rel="icon">
+    
+    
+</head>
+<body>
+{% block body %}
+
+   
+
+                  
+                    {% if app.user %}
+                    <div class="nav-item dropdown">
+
+                        <div class="mb-3">
+                           
+
+
+                          
+                        </div>
+
+                    </div>
+
+                    {% else %}
+                    <div class="nav-item dropdown">
+
+
+
+                    </div>
+                    {% endif %}
+
+                   {# <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu">
+                            <a href="{{ path(blog.html) }}" class="dropdown-item">Blog Grid</a>
+                            <a href="{{ path("single.html") }}" class="dropdown-item">Blog Detail</a>
+                        </div>
+                    </div>
+                    #}
+                </div>
+            </div>
+
+    </div>
+    </div>
+    <!-- Nav Bar End -->
+
+
+    {% block bodyMenu %}
+
+    {% endblock %}
+
+
+
+
+    
+
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+>
+
+
+{% endblock %}
+</body>
+</html>
