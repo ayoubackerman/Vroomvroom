@@ -101,7 +101,7 @@
                              src="{{asset('assets1/images/logo/accent-teal-100%402x.png')}}"
                              width="32"
                              alt="Huma">
-                        <span class="d-none d-lg-block">VROOM VROOM</span>
+                        <span class="d-none d-lg-block">MY COMPANY</span>
                     </a>
 
                     <!-- <button class="btn navbar-btn mr-16pt" data-toggle="modal" data-target="#apps">Apps <i class="material-icons">arrow_drop_down</i></button> -->
@@ -148,7 +148,7 @@
                                      src="{{asset('assets1/images/people/50/guy-3.jpg')}}"
                                      alt="account" />
                                 <span class="flex d-flex flex-column mr-8pt">
-                                    <span class="navbar-text-100"> ADMIN</span>
+                                    <span class="navbar-text-100"> trifi med aziz</span>
                                     <small class="navbar-text-50">Administrator</small>
                                 </span>
                             </a>
@@ -255,7 +255,55 @@
                                     data-caret="false">
                                 <i class="material-icons icon-24pt">mail_outline</i>
                             </button>
-                            
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <div data-perfect-scrollbar
+                                     class="position-relative">
+                                    <div class="dropdown-header"><strong>Messages</strong></div>
+                                    <div class="list-group list-group-flush mb-0">
+
+                                        <a href="javascript:void(0);"
+                                           class="list-group-item list-group-item-action unread">
+                                            <span class="d-flex align-items-center mb-1">
+                                                <small class="text-black-50">5 minutes ago</small>
+
+                                                <span class="ml-auto unread-indicator bg-accent"></span>
+
+                                            </span>
+                                            <span class="d-flex">
+                                                <span class="avatar avatar-xs mr-2">
+                                                    <img src="{{asset('assets1/images/people/110/woman-5.jpg')}}"
+                                                         alt="people"
+                                                         class="avatar-img rounded-circle">
+                                                </span>
+                                                <span class="flex d-flex flex-column">
+                                                    <strong class="text-black-100">Michelle</strong>
+                                                    <span class="text-black-70">Clients loved the new design.</span>
+                                                </span>
+                                            </span>
+                                        </a>
+
+                                        <a href="javascript:void(0);"
+                                           class="list-group-item list-group-item-action">
+                                            <span class="d-flex align-items-center mb-1">
+                                                <small class="text-black-50">5 minutes ago</small>
+
+                                            </span>
+                                            <span class="d-flex">
+                                                <span class="avatar avatar-xs mr-2">
+                                                    <img src="{{asset('assets1/images/people/110/woman-5.jpg')}}"
+                                                         alt="people"
+                                                         class="avatar-img rounded-circle">
+                                                </span>
+                                                <span class="flex d-flex flex-column">
+                                                    <strong class="text-black-100">Michelle</strong>
+                                                    <span class="text-black-70">🔥 Superb job..</span>
+                                                </span>
+                                            </span>
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <!-- // END Notifications dropdown -->
                     </div>
@@ -296,7 +344,7 @@
 
                                 <small class="ml-4pt flex">
                                     <span class="d-flex flex-column">
-                                        <strong class="text-black-100">VROOM VROOM</strong>
+                                        <strong class="text-black-100">My Company Inc.</strong>
                                         <span class="text-black-50">Publisher</span>
                                     </span>
                                 </small>
@@ -320,9 +368,12 @@
                 <div class="js-fix-footer footer border-top-2">
                     <div class="container-fluid page__container page-section d-flex flex-column">
                         <p class="text-70 brand mb-24pt">
-                             VROOM VROOM 
+                            <img class="brand-icon"
+                                 src="{{asset('assets1/images/logo/black-70%402x.png')}}"
+                                 width="30"
+                                 alt="Huma"> My Company
                         </p>
-                        <p class="measure-lead-max text-muted mb-0 small">VROOM </p>
+                        <p class="measure-lead-max text-muted mb-0 small">My Company is a beautifully crafted user interface for modern Business Admin Web Applications, with examples for many pages needed for Customer Relationship Management, Enterprise Resource Planning, Human Resources, Content Management System, Project Management, Tasks, eCommerce, Messaging and Account Management.</p>
                     </div>
                     <div class="pb-16pt pb-lg-24pt">
                         <div class="container-fluid page__container">
@@ -434,7 +485,7 @@
         <script src="{{asset('assets1/js/vector-maps.js')}}"></script>
 
         <!-- List.js -->
-        <script src="{{asset('assets1/vendor/list.min.js')}}"></script>
+        <script src="{{asset('assets1/vendor/list.min.js')}}"></script>c:
         <script src="{{asset('assets1/js/list.js')}}"></script>
 
         <!-- Tables -->
@@ -465,8 +516,10 @@
 
                         <a  href="#"
                            class="sidebar-brand ">
-                            
-                            <span>VROOM VROOM </span>
+                            <img class="sidebar-brand-icon"
+                                 src="{{asset('assets1/images/logo/accent-teal-100%402x.png')}}"
+                                 alt="Huma">
+                            <span>MY COMPANY</span>
                         </a>
 
                         <div class="sidebar-account mx-16pt mb-16pt dropdown">
@@ -524,7 +577,7 @@
 
                                     <small class="ml-4pt flex">
                                         <span class="d-flex flex-column">
-                                            <strong class="text-black-100">VROOM VROOM  Inc.</strong>
+                                            <strong class="text-black-100">My Company Inc.</strong>
                                             <span class="text-black-50">Publisher</span>
                                         </span>
                                     </small>
@@ -543,7 +596,19 @@
 
                         <div class="sidebar-heading">Overview</div>
                         <ul class="sidebar-menu">
-                         
+                            <li class="sidebar-menu-item active">
+                                <a class="sidebar-menu-button"
+                                href="{{ path('app_user') }}> 
+                                    <span class="sidebar-menu-text">List User</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item active">
+                                <a class="sidebar-menu-button"
+                                     href="#"> 
+                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">insert_chart_outlined</span>
+                                    <span class="sidebar-menu-text">Statistique</span>
+                                </a>
+                            </li>
                             {# <li class="sidebar-menu-item">
                                 <a class="sidebar-menu-button"
                                    data-toggle="collapse"

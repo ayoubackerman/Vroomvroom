@@ -4,6 +4,8 @@ namespace App\Controller;
 
 
 use App\Entity\User;
+use App\Entity\Role;
+
 use App\Form\RegistrationFormType;
 use App\Repository\UserRepository;
 use App\Security\UserAuthenticator;
@@ -45,13 +47,28 @@ class RegistrationController extends AbstractController
             $user->setActivationToken(md5(uniqid()));
             
 
+            if (in_array('2',$user->getRoles())) {
+                $roleId = 2; // Example ID
+                $role = $entityManager->getRepository(Role::class)->find($roleId);
+                
+                // Set the role for a User entity
+                $user->setIdRole($role);         
+               }elseif(in_array('3',$user->getRoles())) {
+                $roleId = 3; // Example ID
+$role = $entityManager->getRepository(Role::class)->find($roleId);
+
+// Set the role for a User entity
+$user->setIdRole($role);
+                }
+            
+
             $entityManager->persist($user);
             $entityManager->flush();
             // do anything else you need here, like send an email
 
 
             $message =( new \Swift_Message('Please Confirm your registration'))
-            ->setFrom('pidevmycompany2023@gmail.com')
+            ->setFrom('benbrahimayoubben@gmail.com')
             ->setTo($user->getEmail())
             ->setBody($this->renderView('registration/confirmation_email.html.twig',
                 ['token'=>$user->getActivationToken()]),'text/html') ;

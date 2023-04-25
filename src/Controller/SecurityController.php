@@ -56,7 +56,7 @@ class SecurityController extends AbstractController
             $entityManager->flush();
 
             $message =( new \Swift_Message('Please Reset your password'))
-                ->setFrom('pidevmycompany2023@gmail.com')
+                ->setFrom('benbrahimayoubben@gmail.com')
                 ->setTo($user->getEmail())
                 ->setBody($this->renderView('security/reset_password_email.html.twig',
                     ['reset_token'=>$user->getResetToken()]),'text/html') ;
@@ -88,11 +88,11 @@ class SecurityController extends AbstractController
             $entityManager->flush();
             $email=$user->getEmail();
                $mail=(new Email())
-               ->from('pidevmycompany2023@gmail.com')
+               ->from('benbrahimayoubben@gmail.com')
                ->to($email)
                ->subject('PASSWORD CHANGED')
                ->text("your PASSWORD has been changed !");
-               $trasport= new GmailSmtpTransport('pidevmycompany2023@gmail.com','guyuwthwzlzquasf');
+               $trasport= new GmailSmtpTransport('benbrahimayoubben@gmail.com','rayxxvzckpdqvrvs');
                $mailer= new mailer($trasport);
                $mailer->send($mail);
             return $this->redirectToRoute('app_login');}

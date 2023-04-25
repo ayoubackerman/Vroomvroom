@@ -2,10 +2,11 @@
 
 namespace App\Form;
 
-use App\Entity\Role;
+use App\Entity\ole;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class RoleType extends AbstractType
 {
@@ -13,6 +14,7 @@ class RoleType extends AbstractType
     {
         $builder
             ->add('roles')
+            ->add('ajouter',SubmitType::class)
         ;
     }
 

@@ -113,6 +113,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $resetToken;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=role::class)
+     */
+    private $id_role;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -292,6 +297,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setResetToken(string $resetToken): self
     {
         $this->resetToken = $resetToken;
+
+        return $this;
+    }
+
+    public function getIdRole(): ?Role
+    {
+        return $this->id_role;
+    }
+
+    public function setIdRole(?Role $id_role): self
+    {
+        $this->id_role = $id_role;
 
         return $this;
     }

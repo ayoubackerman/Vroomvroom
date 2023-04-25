@@ -52,8 +52,12 @@ class AppCustomAuthenticator extends AbstractLoginFormAuthenticator
         }
         $user = $token->getUser();
 
-        if (in_array('1',$user->getRoles())) {
-            return new RedirectResponse($this->urlGenerator->generate('admin_index'));
+        if($user->getActivationToken()!=NULL){
+            return new RedirectResponse($this->urlGenerator->generate('notverified_user'));
+                
+            }
+        elseif (in_array('1',$user->getRoles())) {
+            return new RedirectResponse($this->urlGenerator->generate('app_user'));
         }elseif(in_array('2',$user->getRoles())) {
             if($user->getStatuts()=="Actif" && $user->getActivationToken()==NULL){
             return new RedirectResponse($this->urlGenerator->generate('app_home'));}
@@ -61,7 +65,7 @@ class AppCustomAuthenticator extends AbstractLoginFormAuthenticator
             if($user->getStatuts()=="Actif" && $user->getActivationToken()==NULL){
             return new RedirectResponse($this->urlGenerator->generate('app_home'));}
 
-            elseif($user->getActivationToken()!=NULL){
+            if($user->getActivationToken()!=NULL){
             return new RedirectResponse($this->urlGenerator->generate('notverified_user'));
                 
             }

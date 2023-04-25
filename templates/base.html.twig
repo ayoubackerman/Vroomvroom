@@ -1,338 +1,392 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>
-			{% block title %}Welcome!
-			{% endblock %}
-		</title>
-		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Jewel Theme">
+		<meta name="description" content="VromVrom - le site de covoiturage">
+		<meta name="keywords" content="">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+		<title>VromVrom - le site de covoiturage</title>
 		{% block stylesheets %}
-			<!-- Google Fonts -->
-			<link href="https://fonts.gstatic.com" rel="preconnect">
-			<link
-			href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+			<link rel="shortcut icon" href="{{asset('images/favicon.ico')}}" type="image/x-icon">
+			<!-- reset css -->
 
-			<!-- Vendor CSS Files -->
-			<link href="{{asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-			<link href="{{asset('assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
-			<link href="{{asset('assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
-			<link href="{{asset('assets/vendor/quill/quill.snow.css')}}" rel="stylesheet">
-			<link href="{{asset('assets/vendor/quill/quill.bubble.css')}}" rel="stylesheet">
-			<link href="{{asset('assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
 			<link
-			href="{{asset('assets/vendor/simple-datatables/style.css')}}" rel="stylesheet">
-			<link rel="stylesheet" href="{{ asset('bundles/mercuryseriesflashy/css/flashy.css') }}">
-
-			<!-- Template Main CSS File -->
-			<link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
+			rel="stylesheet" type="text/css" href="{{asset('assets/css/css_reset.css')}}">
+			<!-- bootstrap -->
+			<link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap.min.css')}}">
+			<link
+			rel="stylesheet" type="text/css" href="{{asset('assets/css/jquery.datetimepicker.min.css')}}">
+			<!-- Latest compiled and minified CSS -->
+			<link
+			rel="stylesheet" href="{{asset('assets/css/bootstrap-select.min.css')}}">
+			<!-- preload -->
+			<link rel="stylesheet" type="text/css" href="{{asset('assets/css/loaders.min.css')}}">
+			<link rel="stylesheet" type="text/css" href="{{asset('assets/css/index.css')}}">
 		{% endblock %}
 
-		{% block javascripts %}
-			<!-- Vendor JS Files -->
-			<script src="{{asset('assets/vendor/apexcharts/apexcharts.min.js')}}"></script>
-			<script src="{{asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-			<script src="{{asset('assets/vendor/chart.js/chart.min.js')}}"></script>
-			<script src="{{asset('assets/vendor/echarts/echarts.min.js')}}"></script>
-			<script src="{{asset('assets/vendor/quill/quill.min.js')}}"></script>
-			<script src="{{asset('assets/vendor/simple-datatables/simple-datatables.js')}}"></script>
-			<script src="{{asset('assets/vendor/tinymce/tinymce.min.js')}}"></script>
-			<script src="{{asset('assets/vendor/php-email-form/validate.js')}}"></script>
-			<script src="{{ asset('bundles/mercuryseriesflashy/js/flashy.js') }}"></script>
-
-
-			<!-- Template Main JS File -->
-			<script src="{{asset('assets/js/main.js')}}"></script>
-		{% endblock %}
 	</head>
 	<body>
-		
-
+		<!-- MAIN -->
 		{% block header %}
-			<!-- ======= Header ======= -->
-			<header id="header" class="header fixed-top d-flex align-items-center">
-
-				<div class="d-flex align-items-center justify-content-between">
-				
-						<span class="d-none d-lg-block">VroomVroom</span>
-					</a>
-					<i class="bi bi-list toggle-sidebar-btn"></i>
+			<div class="load-wrap">
+				<div class="wheel-load">
+					<img src="{{asset('images/loader.gif')}}" alt="" class="image">
 				</div>
-				<!-- End Logo -->
+			</div>
+			<div class="wheel-menu-wrap ">
+				<div class="container-fluid wheel-bg1">
+					<div class="row">
+					
+						<div class="col-sm-3">
+							<div class="wheel-logo">
+								<a href="index.html"><img src="{{asset('images/logo.png')}}" alt=""></a>
+							</div>
+						</div>
+						<div class="col-sm-9 col-xs-12 padd-lr0">
+							<div class="wheel-top-menu clearfix">
+								<div class="wheel-top-menu-info">
+									<div class="top-menu-item">
+										<a href="#">
+											<i class="fa fa-phone"></i>
+											<span>(+61) 3214 546789</span>
+										</a>
+									</div>
+									<div class="top-menu-item">
+										<a href="#">
+											<i class="fa fa-envelope"></i>
+											<span>
+												<span class="__cf_email__" data-cfemail="33505c5d4752504773445b56565f1e41565d47525f1d505c5e">[email&#160;protected]</span>
+											</span>
+										</a>
+									</div>
+								</div>
+								<div class="wheel-top-menu-log">
+									<div class="top-menu-item">
+										<div class="dropdown wheel-user-ico">
+											<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+												Account
+												<span class="caret"></span>
+											</button>
+											<ul class="dropdown-menu">
+												<li>
+													<a href="{{ path('app_login') }} ">Login</a>
+												</li>
+												<li>
+													<a href="{{ path('app_register') }} ">Register</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="top-menu-item">
+										<div class="dropdown wheel-lang-ico">
+											<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+												Eng
+												<span class="caret"></span>
+											</button>
+											<ul class="dropdown-menu">
+												<li>
+													<a href="#">Brazil</a>
+												</li>
+												<li>
+													<a href="#">France</a>
+												</li>
+												<li>
+													<a href="#">Germany</a>
+												</li>
+												<li>
+													<a href="#">India</a>
+												</li>
+												<li>
+													<a href="#">Japan</a>
+												</li>
+												<li>
+													<a href="#">Serbia</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="top-menu-item">
+										<div class="dropdown">
+											<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+												USD
+												<span class="caret"></span>
+											</button>
+											<ul class="dropdown-menu">
+												<li>
+													<a href="#">USD</a>
+												</li>
+												<li>
+													<a href="#">EUR</a>
+												</li>
+												<li>
+													<a href="#">JPY</a>
+												</li>
+												<li>
+													<a href="#">DKK</a>
+												</li>
+												<li>
+													<a href="#">GBP</a>
+												</li>
+												<li>
+													<a href="#">CHF</a>
+												</li>
+												<li>
+													<a href="#">NZD</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-9 ">
+							<div class="wheel-navigation">
+								<nav
+									id="dl-menu">
 
-				<div class="search-bar">
-					<form class="search-form d-flex align-items-center" method="POST" action="#">
-						<input type="text" name="query" placeholder="Search" title="Enter search keyword">
-						
-					</form>
+									<!-- class="dl-menu" -->
+									<ul class="main-menu dl-menu">
+										<li class="menu-item   current-menu-parent menu-item-has-children   active-color ">
+											<a href="{{ path('app_dashboard') }} ">Acceuil</a>
+											
+										</li>
+										<li class="menu-item   ">
+											<a href="">Reservation</a>
+										
+										</li>
+										<li class="menu-item menu-item-has-children  ">
+											<a href="#">Pages</a>
+											<ul class="sub-menu">
+												<li class="menu-item ">
+													<a href="contact.html">contact</a>
+												</li>
+												<li class="menu-item ">
+													<a href="register.html">Register</a>
+												</li>
+												<li class="menu-item ">
+													<a href="checkout.html">Ceckout</a>
+												</li>
+												<li class="menu-item ">
+													<a href="about.html">About</a>
+												</li>
+												<li class="menu-item ">
+													<a href="shopping.html">shopping cart</a>
+												</li>
+												<li class="menu-item menu-item-has-children">
+													<a href="#">Level 2</a>
+													<ul class="sub-menu">
+														<li class="menu-item">
+															<a href="#">Level 3</a>
+														</li>
+														<li class="menu-item">
+															<a href="#">Level 3</a>
+														</li>
+														<li class="menu-item">
+															<a href="#">Level 3</a>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li class="menu-item current-menu-parent menu-item-has-children  ">
+											<a href="#">
+												Urgence
+											</a>
+											<!--class=" dl-submenu "-->
+											<ul class="sub-menu dl-submenu">
+												<li class="menu-item current-menu-item">
+													<a href="car-list-grid.html">Passer une Urgence</a>
+												</li>
+												<li class="menu-item current-menu-item">
+													<a href="car-list-3col2.html">Mes Urgence</a>
+												</li>
+											</ul>
+										</li>
+										<li class="menu-item current-menu-parent menu-item-has-children  ">
+											<a href="#">
+												Reclamation
+											</a>
+											<!--class=" dl-submenu "-->
+											<ul class="sub-menu dl-submenu">
+												<li class="menu-item current-menu-item">
+												</li>
+												<li class="menu-item current-menu-item">
+												</li>
+											</ul>
+										</li>
+									</ul>
+									<div class="nav-menu-icon">
+										<i></i>
+									</div>
+								</nav>
+								<a href="#" class="wheel-cheader-but">Buy Now</a>
+							</div>
+						</div>
+					</div>
 				</div>
-				<!-- End Search Bar -->
-
-				<nav class="header-nav ms-auto">
-					<ul class="d-flex align-items-center">
-
-						<li class="nav-item d-block d-lg-none">
-							<a class="nav-link nav-icon search-bar-toggle " href="#">
-								<i class="bi bi-search"></i>
-							</a>
-						</li>
-						<!-- End Search Icon-->
-
-						<li class="nav-item dropdown">
-
-							<a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-								<i class="bi bi-bell"></i>
-								<span class="badge bg-primary badge-number">0</span>
-							</a>
-							<!-- End Notification Icon -->
-
-							
-							<!-- End Notification Dropdown Items -->
-
-						</li>
-						<!-- End Notification Nav -->
-
-						<li class="nav-item dropdown">
-
-							<a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-								<i class="bi bi-chat-left-text"></i>
-								<span class="badge bg-success badge-number">0</span>
-							</a>
-							<!-- End Messages Icon -->
-
-							
-						<!-- End Messages Nav -->
-
-						<li class="nav-item dropdown pe-3">
-
-							<a class="nav-link nav-profile d-flex align-items-center pe-0" href="{{ path('user_edit',{'id':app.user.id})}}" data-bs-toggle="dropdown">
-								<img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-								<span class="d-none d-md-block dropdown-toggle ps-2">{{app.user.nom}}</span>
-							</a>
-							<!-- End Profile Iamge Icon -->
-
-							<ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-								<li class="dropdown-header">
-									<h6>{{app.user.nom}}</h6>
-									<span>{{app.user.prenom}}</span>
-								</li>
-								<li>
-									<hr class="dropdown-divider">
-								</li>
-
-								<li>
-									<a class="dropdown-item d-flex align-items-center"  href="{{ path('show_userr',{'id':app.user.id}) }}">
-										<i class="bi bi-person"></i>
-										<span>My Profile</span>
-									</a>
-								</li>
-								<li>
-									<hr class="dropdown-divider">
-								</li>
-
-								<li>
-									<a class="dropdown-item d-flex align-items-center" href="{{ path('user_edit',{'id':app.user.id}) }}">
-										<i class="bi bi-gear"></i>
-										<span>Account Settings</span>
-									</a>
-								</li>
-								<li>
-									<hr class="dropdown-divider">
-								</li>
-
-								<li>
-									<a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-										<i class="bi bi-question-circle"></i>
-										<span>Need Help?</span>
-									</a>
-								</li>
-								<li>
-									<hr class="dropdown-divider">
-								</li>
-
-								<li>
-									<a class="dropdown-item d-flex align-items-center" href="{{ path('app_login') }}">
-										<i class="bi bi-box-arrow-right"></i>
-										<span>Sign Out</span>
-									</a>
-								</li>
-
-							</ul>
-							<!-- End Profile Dropdown Items -->
-						</li> 
-						<!-- End Profile Nav -->
-
-					</ul>
-				</nav>
-				<!-- End Icons Navigation -->
-
-			</header>
-			<!-- End Header -->
-		{% endblock %}
-
-		{% block sidebar %}
-			{# <!-- ======= Sidebar ======= -->
-			<aside id="sidebar" class="sidebar">
-
-				<ul class="sidebar-nav" id="sidebar-nav">
-<!-- End Components Nav -->
-					<li class="nav-item">
-						<a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-							<i class="bi bi-journal-text"></i>
-							<span>Gestion des Clients</span>
-							<i class="bi bi-chevron-down ms-auto"></i>
-						</a>
-						<ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-							<li>
-								<a href="{{ path('app_client_index') }} ">
-									<i class="bi bi-circle"></i>
-									<span>Liste Clients </span>
-								</a>
-							</li>
-							<li>
-								<a href="{{ path('app_division_index') }} ">
-									<i class="bi bi-circle"></i>
-									<span>Liste de Divisions</span>
-								</a>
-							</li>
-
-
-						</ul>
-					</li>
-					<!-- End Components Nav -->
-					<li class="nav-item">
-						<a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-							<i class="bi bi-journal-text"></i>
-							<span>Gestion Rh</span>
-							<i class="bi bi-chevron-down ms-auto"></i>
-						</a>
-						<ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-							<li>
-								<a href="{{ path('app_rh_index') }} ">
-									<i class="bi bi-circle"></i>
-									<span>Listes des Employes</span>
-								</a>
-							</li>
-							<li>
-								<a href="{{ path('app_contract_index') }} ">
-									<i class="bi bi-circle"></i>
-									<span>Listes  des Contrat</span>
-								</a>
-							</li>
-
-
-						</ul>
-					</li>
-
-					<li class="nav-item">
-						<a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-							<i class="bi bi-journal-text"></i>
-							<span>Gestion Produit</span>
-							<i class="bi bi-chevron-down ms-auto"></i>
-						</a>
-						<ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-							<li>
-								<a href="{{ path('app_product_index') }} ">
-									<i class="bi bi-circle"></i>
-									<span>Listes produits</span>
-								</a>
-							</li>
-							<li>
-								<a href="{{ path('app_category_index') }} ">
-									<i class="bi bi-circle"></i>
-									<span>Listes  Categorie</span>
-								</a>
-							</li>
-
-
-						</ul>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-							<i class="bi bi-journal-text"></i>
-							<span>Gestion vente</span>
-							<i class="bi bi-chevron-down ms-auto"></i>
-						</a>
-						<ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-							<li>
-								<a href="{{ path('app_vente_index') }} ">
-									<i class="bi bi-circle"></i>
-									<span>Listes vente</span>
-								</a>
-							</li>
-
-
-						</ul>
-					</li>
-
-					</li>
-					<li class="nav-item">
-						<a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-							<i class="bi bi-journal-text"></i>
-							<span>Gestion achat</span>
-							<i class="bi bi-chevron-down ms-auto"></i>
-						</a>
-						<ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-							<li>
-								<a href="{{ path('app_purchase_index') }} ">
-									<i class="bi bi-circle"></i>
-									<span>Listes achat</span>
-								</a>
-							</li>
-
-
-						</ul>
-						</li>
-					<li class="nav-item">
-						<a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-							<i class="bi bi-journal-text"></i>
-							<span>Gestion Fournisseur</span>
-							<i class="bi bi-chevron-down ms-auto"></i>
-						</a>
-						<ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-							<li>
-								<a href="{{ path('app_supplier_index') }} ">
-									<i class="bi bi-circle"></i>
-									<span>Listes Fournisseur</span>
-								</a>
-							</li>
-
-
-						</ul>
-					</li> #}
-					<!-- End Forms Nav -->
-
-					<li class="nav-item">
-						<a class="nav-link collapsed" href="{{ path('app_logout') }}">
-							<i class="bi bi-box-arrow-in-right"></i>
-							<span>logout</span>
-						</a>
-					</li>
-				</ul>
-				</ul>
-
-			</aside>
-			<!-- End Sidebar-->
+			</div>
+			<br><br><br>
+					<br>
+					<br>
 		{% endblock %}
 		{% block body %}{% endblock %}
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<!-- FOOTER -->
+		<!-- ///////////////// -->
 		{% block footer %}
-			<!-- ======= Footer ======= -->
-			<footer id="footer" class="footer">
-				<div class="copyright">
-					&copy; Copyright
-					<strong>
-						<span> AYOUB </span>
-					</strong>. All Rights Reserved
-				</div>
-				<div class="credits">
-					<!-- All the links in the footer should remain intact. -->
-					<!-- You can delete the links only if you purchased the pro version. -->
-					<!-- Licensing information: https://bootstrapmade.com/license/ -->
-					<!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-					Designed by<a href="https://bootstrapmade.com/"> BootstrapMade</a>
+
+			<footer class="wheel-footer">
+				<img src="{{asset('images/bg4.jpg')}}" alt="" class="wheel-img">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3  col-sm-6  padd-lr0">
+							<div class="wheel-address">
+								<div class="wheel-footer-logo">
+									<a href="#"><img src="{{asset('images/logo2.png')}}" alt=""></a>
+								</div>
+								<ul>
+									<li>
+										<span>
+											<i class="fa fa-map-marker"></i>121 King Street, Melbourne
+											<br>
+											VIC 3000, Australia
+										</span>
+									</li>
+									<li>
+										<a href="#">
+											<span>
+												<i class="fa fa-phone"></i>
+												+61 3 8376 6284</span>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span>
+												<i class="fa fa-envelope"></i>
+												<span class="__cf_email__" data-cfemail="04676b6a7065677044736c6161682976616a7065682a676b69">[email&#160;protected]</span>
+											</span>
+										</a>
+									</li>
+								</ul>
+								<div class="wheel-soc">
+									<a href="#" class="fa fa-twitter"></a>
+									<a href="#" class="fa fa-facebook"></a>
+									<a href="#" class="fa fa-linkedin"></a>
+									<a href="#" class="fa fa-instagram"></a>
+									<a href="#" class="fa fa-share-alt"></a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6  padd-lr0">
+							<div class="wheel-footer-item">
+								<h3>Useful Links</h3>
+								<ul>
+									<li><a href="#" class="">About us</a></li>
+									<li><a href="#" class="">Customer Service</a></li>
+									<li><a href="#" class="">Contact Us</a></li>
+									<li><a href="#" class="">Safety Recall</a></li>
+									<li><a href="#" class="">Privacy policy</a></li>
+									<li><a href="#" class="">Site Map</a></li>
+									<li><a href="#" class="">Terms & condition</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-2 col-sm-6  padd-lr0">
+							<div class="wheel-footer-item ">
+								<h3>Vehicles</h3>
+								<ul>
+									<li><a href="#" class="">Exotic Cars</a></li>
+									<li><a href="#" class="">SUVs</a></li>
+									<li><a href="#" class="">Trucks</a></li>
+									<li><a href="#" class="">Mini Vans</a></li>
+									<li><a href="#" class="">Moving Trucks</a></li>
+									<li><a href="#" class="">Vans</a></li>
+									<li><a href="#" class="">RVs</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-6 padd-lr0">
+							<div class="wheel-footer-gallery">
+								<h3>Photo Gallery</h3>
+								<div class="  clearfix">
+									<div class="wheel-footer-galery-item">
+										<a href="#"><img src="{{asset('images/i11.jpg')}}" alt=""></a>
+									</div>
+									<div class="wheel-footer-galery-item">
+										<a href="#"><img src="{{asset('images/i12.jpg')}}" alt=""></a>
+									</div>
+									<div class="wheel-footer-galery-item">
+										<a href="#"><img src="{{asset('images/i13.jpg')}}" alt=""></a>
+									</div>
+									<div class="wheel-footer-galery-item">
+										<a href="#"><img src="{{asset('images/i14.jpg')}}" alt=""></a>
+									</div>
+									<div class="wheel-footer-galery-item">
+										<a href="#"><img src="{{asset('images/i15.jpg')}}" alt=""></a>
+									</div>
+									<div class="wheel-footer-galery-item">
+										<a href="#"><img src="{{asset('images/i16.jpg')}}" alt=""></a>
+									</div>
+									<div class="wheel-footer-galery-item">
+										<a href="#"><img src="{{asset('images/i17.jpg')}}" alt=""></a>
+									</div>
+									<div class="wheel-footer-galery-item">
+										<a href="#"><img src="{{asset('images/i18.jpg')}}" alt=""></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</footer>
-			<!-- End Footer -->
+			<div class="wheel-footer-info wheel-bg6">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-8 col-sm-6  padd-lr0">
+							<span>&#169; WHEEL 2016 | Designed with Love By bigpsfan</span>
+						</div>
+						<div class="col-lg-4 col-sm-6 padd-lr0">
+							<ul>
+								<li><a href="#">Home</a></li>
+								<li><a href="#">Pages</a></li>
+								<li><a href="#">Listings</a></li>
+								<li><a href="#">Reservation</a></li>
+								<li><a href="#">Location</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
 		{% endblock %}
+		<!-- Scripts project -->
+		{% block javascripts %}
+
+			<script data-cfasync="false" src="{{asset('../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js')}}"></script>
+			<script type="text/javascript" src="{{asset('assets/js/jquery-2.2.4.min.js')}}"></script>
+			<script type="text/javascript" src="{{asset('assets/js/bootstrap.min.js')}}"></script>
+			<!-- count -->
+			<script type="text/javascript" src="{{asset('assets/js/jquery.countTo.js')}}"></script>
+			<!-- google maps -->
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBt5tJTim4lOO3ojbGARhPd1Z3O3CnE-C8" type="text/javascript"></script>
+			<!-- swiper -->
+			<script type="text/javascript" src="{{asset('assets/js/idangerous.swiper.min.js')}}"></script>
+			<script type="text/javascript" src="{{asset('assets/js/equalHeightsPlugin.js')}}"></script>
+			<script type="text/javascript" src="{{asset('assets/js/jquery.datetimepicker.full.min.js')}}"></script>
+			<!-- Latest compiled and minified JavaScript -->
+			<script type="text/javascript" src="{{asset('assets/js/bootstrap-select.min.js')}}"></script>
+			<script type="text/javascript" src="{{asset('assets/js/index.js')}}"></script>
+			
+		{% endblock %}
+		<!-- sixth block end -->
 	</body>
 </html>

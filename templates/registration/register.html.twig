@@ -1,21 +1,8 @@
  {% extends 'base.html.twig' %}
 
-
-{% block header %}
-
-{% endblock %}
-
-{% block sidebar %}
-
-{% endblock %}
-
-{% block footer %}
-
-{% endblock %}
-
 {% block body %}
-
-    <div class="container">
+<center>
+    <div class="container" style="margin-left:500px;">
 
         <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
             <div class="container">
@@ -91,16 +78,17 @@
                                         {{ form_errors(registrationForm.num,{'attr':{'class':'text-danger'}}) }}
 
                                     </div>
-                                     <div class="col-12">
-                                        <label for="yourmat" class="form-label">votre image</label>
-                                        {{ form_widget(registrationForm.image,{'attr':{'class':'form-control'}}) }}
-                                        <div class="invalid-feedback">svp entrez votre image</div>
-                                        {{ form_errors(registrationForm.image,{'attr':{'class':'text-danger'}}) }}
-
-                                    </div>
+                                    
                                      
                                     
                                     <div style="display:none">
+                                        <div class="col-12">
+                                            <label for="yourmat" class="form-label">votre image</label>
+                                            {{ form_widget(registrationForm.image,{'attr':{'class':'form-control'}}) }}
+                                            <div class="invalid-feedback">svp entrez votre image</div>
+                                            {{ form_errors(registrationForm.image,{'attr':{'class':'text-danger'}}) }}
+    
+                                        </div>
                                     <div class="col-12">
                                         <label for="youraddr" class="form-label">votre statut</label>
                                         {{ form_widget(registrationForm.statuts,{'attr':{'class':'form-control'}}) }}
@@ -144,5 +132,5 @@
         </section>
 
     </div>
-
+</center>
 {% endblock %}

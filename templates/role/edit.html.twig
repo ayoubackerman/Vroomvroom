@@ -1,13 +1,38 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Role{% endblock %}
-
+{% block title %} New Division {% endblock %}
 {% block body %}
-    <h1>Edit Role</h1>
+	<div class="row" style="margin-left:300px">
+		<div style="display: flex;align-items: center;justify-content: center;margin-top: 90px; padding: 15px;">
 
-    {{ include('role/_form.html.twig', {'button_label': 'Update'}) }}
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Add role </h5>
 
-    <a href="{{ path('app_role_index') }}">back to list</a>
+					<!-- General Form Elements -->
+					{{ form_start(f,{attr:{novalidate:'novalidate'}}) }}
 
-    {{ include('role/_delete_form.html.twig') }}
+					<label for="inputText" class="col-sm-18 col-form-label">roles</label>
+					<div class="col-sm-18">
+						{{ form_widget(f.roles,{'attr':{'class':'form-control'}}) }}
+					</div>
+					{{ form_errors(f.roles,{'attr':{'class':'text-danger'}}) }}
+					
+			
+					<br/>
+					<div class="col-sm-10" style="display: flex;align-items: center;justify-content: center">
+
+						{{ form_widget(f.ajouter,{'attr':{'class':'btn btn-primary'}}) }}
+					</div>
+
+					{{ form_end(f) }}
+
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+
 {% endblock %}

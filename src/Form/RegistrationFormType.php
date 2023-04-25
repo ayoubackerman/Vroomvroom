@@ -32,8 +32,8 @@ class RegistrationFormType extends AbstractType
             ->add('num')
             ->add('image')
             ->add('roles', ChoiceType::class,[
-                'choices' => ['Chauffeur' => "1" ,
-            'Client' => "2" ],
+                'choices' => ['Chauffeur' => "2" ,
+            'Client' => "3" ],
                 
                 'multiple' => false,
                 'required' => true,
